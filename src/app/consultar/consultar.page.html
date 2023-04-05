@@ -18,10 +18,10 @@
     <ion-item-sliding *ngFor="let veiculo of listaVeiculo">
 
       <ion-item-options side="start">
-        <ion-item-option color="warning" (click)="alterar()">Alterar</ion-item-option>
+        <ion-item-option color="warning"  (click)="alterar(veiculo.id)">Alterar</ion-item-option>
       </ion-item-options>
 
-        <ion-item id="{{veiculo.placa}}">
+        <ion-item id="placa{{veiculo.placa}}">
           <ion-label>{{veiculo.placa}}</ion-label>
           <ion-label>{{veiculo.modelo}}</ion-label>
           <ion-label>{{veiculo.ano}}</ion-label>

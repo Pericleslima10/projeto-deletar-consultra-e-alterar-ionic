@@ -3,14 +3,39 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>alterar</ion-title>
+    <ion-title>Cadastrar</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">alterar</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+
+  <ion-item fill="outline" class="ion-margin">
+    <ion-label position="floating">Placa do Veículo</ion-label>
+    <ion-input [(ngModel)]="placa" placeholder="Digite a placa"></ion-input>
+  </ion-item>
+
+  <ion-item fill="outline" class="ion-margin">
+    <ion-label position="floating">Descrição do veículo</ion-label>
+    <ion-input  [(ngModel)]="modelo" placeholder="Digite o modelo"></ion-input>
+  </ion-item>
+
+  <ion-item fill="outline" class="ion-margin">
+    <ion-label position="floating">Ano do veículo</ion-label>
+    <ion-input [(ngModel)]="ano" placeholder="Digite o ano do veículo"></ion-input>
+  </ion-item>
+
+  <ion-item fill="outline" class="ion-margin">
+    <ion-label position="floating">Marca do veículo</ion-label>
+    <ion-input [(ngModel)]="marca" placeholder="Digite a marca do veículo"></ion-input>
+  </ion-item>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <!-- <ion-button (click)="exibir()">Exibir</ion-button> -->
+        <ion-button (click)="alterar()">Alterar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 </ion-content>

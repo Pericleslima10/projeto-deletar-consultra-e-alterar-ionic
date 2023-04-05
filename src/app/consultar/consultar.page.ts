@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { Veiculo } from '../models/Veiculo';
 import { Storage } from '@ionic/storage-angular';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-consultar',
@@ -15,7 +16,7 @@ import { Storage } from '@ionic/storage-angular';
 
 export class ConsultarPage implements OnInit {
 
-  constructor(private storage: Storage) {
+  constructor(private storage: Storage, private nav: NavController) {
     this.storage.create();
   }
 
@@ -37,16 +38,21 @@ export class ConsultarPage implements OnInit {
 
   }
 
+
+
   listaVeiculo: Veiculo[] = [];
+
 
   veiculo: Veiculo = new Veiculo
 
-  async alterar() {
+  async alterar(id: string) {
+    const idVei = {id};
+    this.nav.navigateForward('/alterar',{queryParams: idVei})
     alert("alterando");
   }
   async deletar(id: string, placa: string) {
     this.storage.remove(id);
-    const idDel = document.querySelector('#'+placa);
+    const idDel = document.querySelector('#placa'+placa);
     idDel?.remove();
     alert("deletando");
   }

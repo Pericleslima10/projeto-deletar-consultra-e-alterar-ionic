@@ -29,9 +29,11 @@ export class CadastrarPage implements OnInit {
 
 
   }
+////// ---------- > possible
+  i: number=0;
 
   async cadastrar() {
-    this.id = String(new Date())+this.placa;
+    this.id = String(this.i+=this.i)+this.placa;
     this.veiculo.id = this.id;
     this.veiculo.placa = this.placa;
     this.veiculo.modelo = this.modelo;
